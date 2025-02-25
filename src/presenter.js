@@ -1,15 +1,19 @@
-import sumar from "./sumador";
+import { convertirARomano } from "./num_romanos";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
+const numeroInput = document.querySelector("#numero");
+const form = document.querySelector("#convertir-form");
 const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
-  event.preventDefault();
+    event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
+    const numero = Number.parseInt(numeroInput.value);
 
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+    // Si el número no es válido (por ejemplo, si es negativo o no es un número), mostramos un mensaje de error.
+    if (isNaN(numero) || numero <= 0) {
+        div.innerHTML = "<p>Por favor, introduce un número válido mayor que 0.</p>";
+    } else {
+        const romano = convertirARomano(numero);
+        div.innerHTML = "<p>El número " + numero + " en romano es: " + romano + "</p>";
+    }
 });
