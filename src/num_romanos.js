@@ -1,5 +1,7 @@
 function convertirARomano(numero) {
     const valores = [
+      { valor: 500, simbolo: 'D' }, 
+      { valor: 400, simbolo: 'CD' },
       { valor: 100, simbolo: 'C' },
       { valor: 90, simbolo: 'XC' },
       { valor: 50, simbolo: 'L' },
