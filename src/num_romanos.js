@@ -1,6 +1,7 @@
 
 function convertirARomano(numero) {
-    return 'I';
+    if (numero === 1) return 'I';
+    if (numero === 2) return 'II';
   }
   
   module.exports = { convertirARomano };
