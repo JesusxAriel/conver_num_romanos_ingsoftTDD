@@ -1,5 +1,6 @@
 function convertirARomano(numero) {
     const valores = [
+      { valor: 10, simbolo: 'X' },
       { valor: 9, simbolo: 'IX' },
       { valor: 5, simbolo: 'V' },
       { valor: 4, simbolo: 'IV' },
